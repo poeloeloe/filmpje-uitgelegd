@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Het filmpje, rustig uitgelegd</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Literata:opsz,wght@7..72,600&display=swap">
+<style>
+/* Layout: one calm column; video, then a big caption plate right under it, then the full text. */
+:root{
+  --bg:#f3f5f7; --paper:#ffffff; --ink:#1b2430; --muted:#4f5b69;
+  --accent:#1f5f8b; --accent-ink:#ffffff; --plate:#101820; --plate-ink:#fdfcf6;
+  --now:#e3eef6; --line:#d5dce3;
+  --body:"Atkinson Hyperlegible", Verdana, Tahoma, sans-serif;
+  --display:"Literata", Georgia, serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#11161c; --paper:#1a222b; --ink:#eef2f5; --muted:#b3bec9;
+    --accent:#7fb8e0; --accent-ink:#0d1b26; --plate:#000000; --plate-ink:#fffbe8;
+    --now:#23384a; --line:#2c3743; color-scheme:dark }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.25rem;line-height:1.55}
+.wrap{max-width:900px;margin:0 auto;padding:1.5rem 16px 4rem}
+h1{font-family:var(--display);font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.15;margin:0 0 .4rem;text-wrap:balance}
+h2{font-family:var(--display);font-size:1.6rem;margin:2.5rem 0 .8rem}
+.lead{color:var(--muted);margin:0 0 1.2rem;max-width:40em}
+.video{position:relative;aspect-ratio:16/9;width:100%;max-width:100%;background:#000;border-radius:10px 10px 0 0;overflow:hidden}
+.video > *{position:absolute;inset:0;width:100%;height:100%}
+.plate{background:var(--plate);color:var(--plate-ink);border-radius:0 0 10px 10px;min-height:7.5rem;
+  padding:1rem 1.25rem;display:flex;align-items:center;justify-content:center;text-align:center;
+  font-size:clamp(1.35rem,3.6vw,1.9rem);line-height:1.35;font-weight:700}
+.controls{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
+button{font:inherit;font-weight:700;font-size:1.3rem;padding:.8rem 1.4rem;border-radius:10px;border:2px solid var(--accent);
+  background:var(--paper);color:var(--accent);cursor:pointer;min-height:3.4rem}
+button.main{background:var(--accent);color:var(--accent-ink);flex:1 1 14rem}
+button:focus-visible{outline:4px solid var(--ink);outline-offset:3px}
+.tip{color:var(--muted);font-size:1.05rem;margin:.8rem 0 0}
+.summary{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:1.2rem 1.4rem}
+.summary ul{margin:0;padding-left:1.3rem;display:grid;gap:.6rem}
+dl{display:grid;gap:.9rem;margin:0}
+dt{font-weight:700}
+dd{margin:0;color:var(--muted)}
+.lines{list-style:none;margin:0;padding:0;display:grid;gap:.25rem}
+.lines button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:4.2rem 1fr;gap:.8rem;width:100%;
+  padding:.6rem .8rem;border-radius:8px;cursor:pointer;font-size:1.15rem}
+.lines button:hover{background:var(--now)}
+.lines button:focus-visible{outline:3px solid var(--accent)}
+.lines .t{color:var(--muted);font-variant-numeric:tabular-nums}
+.lines .on button{background:var(--now);font-weight:700}
+.lines span{min-width:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Het filmpje, rustig uitgelegd</h1>
+  <p class="lead">Het filmpje is in het Engels en gaat erg snel. Onder het beeld staat in gewoon Nederlands wat er gezegd wordt. Druk op de grote knop om te beginnen.</p>
+
+  <div class="video"><div id="player"></div></div>
+  <div class="plate" id="plate" aria-live="polite">Druk op de blauwe knop hieronder om te beginnen.</div>
+
+  <div class="controls">
+    <button class="main" id="play">▶ Afspelen</button>
+    <button id="back">↺ 10 seconden terug</button>
+  </div>
+  <p class="tip">Tip: gaat het te snel? Druk op Pauze en lees rustig verder. Onderaan de pagina staat ook de hele tekst.</p>
+
+  <h2>Kort gezegd</h2>
+  <div class="summary">
+    <ul>
+      <li>Een bekende Deense programmeur zei op een congres: computers schrijven nu zelf de programma's. Mensen hoeven dat bijna niet meer met de hand te doen.</li>
+      <li>De maker van het filmpje vraagt zich af of dat klopt. Zijn antwoord: het typwerk wordt minder belangrijk, maar het nadenken blijft mensenwerk.</li>
+      <li>Het filmpje zit vol grapjes en verzonnen dingen (zoals een datingapp voor ezels). Die hoeft u niet serieus te nemen. Aan het eind komt reclame.</li>
+    </ul>
+  </div>
+
+  <h2>Moeilijke woorden</h2>
+  <dl>
+    <div><dt>Programmeur</dt><dd>Iemand die computerprogramma's, apps en websites maakt.</dd></div>
+    <div><dt>Code</dt><dd>De tekst met instructies waarmee een computer weet wat hij moet doen. Een soort recept voor de computer.</dd></div>
+    <div><dt>AI (kunstmatige intelligentie)</dt><dd>Slimme computerprogramma's die zelf teksten kunnen schrijven, ook code.</dd></div>
+    <div><dt>DHH</dt><dd>Bijnaam van David Heinemeier Hansson, een bekende en uitgesproken programmeur uit Denemarken.</dd></div>
+    <div><dt>Ruby on Rails</dt><dd>Een bekend "bouwpakket" waarmee je snel websites maakt. DHH heeft het ooit zelf bedacht.</dd></div>
+    <div><dt>Rust</dt><dd>Een andere computertaal. Snel, maar voor mensen lastig om te lezen en te schrijven.</dd></div>
+  </dl>
+
+  <h2>De hele tekst</h2>
+  <p class="tip" style="margin-top:0">Klik op een zin om het filmpje vanaf daar te laten spelen.</p>
+  <ol class="lines" id="lines"></ol>
+</div>
+
+<script>
+const CUES = [
+  [0,   "Vorige week sprak een bekende programmeur, David Heinemeier Hansson (bijnaam: DHH), op een groot congres in Amerika."],
+  [6,   "Hij heeft ooit zelf 'Ruby on Rails' bedacht: een bekend gereedschap om websites mee te bouwen."],
+  [11,  "Zijn boodschap: zelf computercode typen met de hand is voorbij. Dat doet de computer (AI) nu voor je."],
+  [18,  "Hij zei er streng bij: 'Somberheid is voor verliezers. Wees geen verliezer.'"],
+  [28,  "De maker van dit filmpje vindt dat heel opvallend. Het is alsof de paus met Pasen komt vertellen dat God niet bestaat."],
+  [38,  "Voor de maker is het persoonlijk. Met 'Ruby on Rails' begon zijn eigen loopbaan, en later dit YouTube-kanaal."],
+  [47,  "Het voelde voor hem alsof zijn ouderlijk huis werd gesloopt."],
+  [52,  "De vraag van dit filmpje: heeft DHH gelijk? Of is hij gewoon veel te enthousiast over AI?"],
+  [58,  "De maker loopt een paar vaardigheden van programmeurs langs. Zijn die in de toekomst nog nuttig?"],
+  [64,  "(Dit is het programma 'The Code Report', van 28 september 2026.)"],
+  [69,  "Eerste vaardigheid: heel snel werken met sneltoetsen. Vroeger was het knap als je alles met het toetsenbord kon, zonder muis."],
+  [84,  "Maar als de computer het meeste typwerk doet, is dat vooral nog een leuk kunstje."],
+  [91,  "DHH gebruikt zelf nog wel graag zulke programma's. Hij zegt: elke app moet een 'typ-ingang' hebben..."],
+  [103, "...maar niet voor mensen. Voor AI-hulpjes, zodat die de app kunnen bedienen in plaats van jij."],
+  [120, "Conclusie: handig om te kennen, maar het loont niet meer om er veel tijd in te steken."],
+  [127, "Tweede vaardigheid: werken met 'bouwpakketten' voor software. Die hadden fans die er bijna een geloof van maakten."],
+  [140, "Bij Ruby on Rails draaide alles om: programmeren moet leuk zijn voor de mens. In 2008 voelde dat als toveren."],
+  [150, "Maar dat 'plezier voor de programmeur' telt niet meer. Het werk wordt toch door AI gedaan."],
+  [158, "(Grapje: de maker doet alsof hij een bedrijfje heeft, 'Tinder voor paarden'. Dat is verzonnen.)"],
+  [165, "Die bouwpakketten maakten het werk vroeger fijn. Nu zitten ze vaak in de weg en maken ze programma's trager."],
+  [170, "DHH had vroeger een hekel aan de computertaal Rust. Hij noemde het 'onmenselijk' om mensen daarin te laten schrijven."],
+  [183, "Maar nu laat hij zijn eigen e-mailprogramma 'Hey' opnieuw schrijven in Rust. Niet door mensen, maar door AI."],
+  [190, "Zijn grapje: 'Rust is geweldig, zolang je er zelf nooit naar hoeft te kijken.'"],
+  [200, "Resultaat: de computers achter zijn e-mailprogramma hebben 95 procent minder werk. Dat scheelt veel geld."],
+  [208, "In de toekomst winnen dus de gereedschappen die goedkoop en snel zijn. Niet de gereedschappen die mensen leuk vinden."],
+  [220, "De maker verwacht dat er uiteindelijk één computertaal overblijft, die alleen computers nog begrijpen."],
+  [232, "Derde vaardigheid, de belangrijkste: zelf code schrijven. DHH schreef vroeger zo'n 30.000 regels per jaar..."],
+  [240, "...en nu, met AI-hulpjes, 150.000 regels per maand. Dat is vijftig keer zoveel."],
+  [247, "Hij vroeg aan de 1.200 programmeurs in de zaal: wie schrijft nog echt veel code met de hand?"],
+  [253, "Ongeveer vijf handen gingen omhoog. Minder dan 1 op de 100."],
+  [260, "Dus volgens DHH is het einde van zelf programmeren niet in zicht. Het is er al."],
+  [267, "De maker gelooft dat niet helemaal. Als programmeren echt voorbij is, waarom worden programmeurs dan niet massaal ontslagen?"],
+  [277, "En waarom verdienen ze in Amerika nog steeds heel goed?"],
+  [281, "Het goede nieuws: het typen zelf was nooit het belangrijkste deel van het werk."],
+  [289, "Het belangrijkste is: begrijpen wát het probleem is, en bedenken hoe je het veilig en slim oplost."],
+  [295, "AI helpt alleen om dat sneller te doen."],
+  [299, "Dus toen DHH zei 'wees geen verliezer', bedoelde hij niet: 'je bent dom als je nog zelf typt'."],
+  [309, "Hij bedoelde: wees niet zo somber! Je hebt nu een heel leger computerhulpjes tot je beschikking."],
+  [315, "'Er is nooit een betere tijd geweest om een gek idee te hebben.'"],
+  [320, "(Grapje: het paardenbedrijfje mislukte, dus maakte hij er een datingapp voor ezels van. Allemaal verzonnen.)"],
+  [331, "Tot slot een uitspraak van Charlie Chaplin: 'Je vindt nooit een regenboog als je naar beneden kijkt.'"],
+  [336, "Chaplin: 'Jullie, het volk, hebben de macht om dit leven vrij en mooi te maken.'"],
+  [343, "Vanaf hier komt er reclame. Die mag u overslaan."],
+  [346, "Reclame voor 'CodeRabbit', een betaald hulpmiddel voor programmeurs."],
+  [350, "Omdat AI zoveel code maakt, moeten mensen enorm veel werk nakijken."],
+  [360, "Dit programma zegt welk stuk je het eerst moet nakijken, en wat veilig weg kan."],
+  [385, "Volgens de maker werken teams er vier keer sneller mee. (Dat is reclame, geen onafhankelijk feit.)"],
+  [392, "Einde. Bedankt voor het kijken!"]
+];
+
+const plate = document.getElementById('plate');
+const list = document.getElementById('lines');
+const playBtn = document.getElementById('play');
+const fmt = s => Math.floor(s/60) + ':' + String(s%60).padStart(2,'0');
+
+CUES.forEach(([t, text], i) => {
+  const li = document.createElement('li');
+  const b = document.createElement('button');
+  b.innerHTML = '<span class="t">' + fmt(t) + '</span><span></span>';
+  b.lastChild.textContent = text;
+  b.addEventListener('click', () => { if (player) { player.seekTo(t, true); player.playVideo(); window.scrollTo({top:0, behavior:'smooth'}); } });
+  li.appendChild(b); list.appendChild(li);
+});
+
+let player = null, current = -1;
+function onYouTubeIframeAPIReady(){
+  player = new YT.Player('player', {
+    videoId: 'OuNKBjuV7A4',
+    playerVars: { rel: 0, fs: 0, cc_load_policy: 0, iv_load_policy: 3, playsinline: 1, modestbranding: 1 },
+    events: { onStateChange: e => {
+      playBtn.textContent = e.data === YT.PlayerState.PLAYING ? '⏸ Pauze' : '▶ Afspelen';
+    } }
+  });
+  setInterval(tick, 250);
+}
+function tick(){
+  if (!player || !player.getCurrentTime) return;
+  const now = player.getCurrentTime();
+  let idx = -1;
+  for (let i = 0; i < CUES.length; i++) if (CUES[i][0] <= now + 0.2) idx = i;
+  if (idx !== current && idx >= 0) {
+    current = idx;
+    plate.textContent = CUES[idx][1];
+    list.querySelectorAll('li').forEach((li, i) => li.classList.toggle('on', i === idx));
+  }
+}
+playBtn.addEventListener('click', () => {
+  if (!player || !player.getPlayerState) return;
+  player.getPlayerState() === YT.PlayerState.PLAYING ? player.pauseVideo() : player.playVideo();
+});
+document.getElementById('back').addEventListener('click', () => {
+  if (player && player.getCurrentTime) player.seekTo(Math.max(0, player.getCurrentTime() - 10), true);
+});
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
